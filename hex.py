@@ -21,7 +21,7 @@ if(mode = "human"):
         diff = len(inp) - len(key)
     key = key[0, len(inp)]
         
-    #convert key and inp to binary for XOR
+    #convert key and inp to Unicode numbers for XOR
     for n in (0, len(inp)):
         #ord returns an integer representing the Unicode code point of the character
         x = ord(inp[n])
@@ -30,7 +30,8 @@ if(mode = "human"):
         #the ^ operator uses moduli two addition, essentially decrypting the message by using the key
         output = output + chr(x^y)
     debug = True
-
+    
+#Part 2: Hexidecimal Mode
 if(mode = "numOut"):
         output = ""
     #loop the key string when the keyfile is shorter than the textfiles
@@ -42,12 +43,12 @@ if(mode = "numOut"):
         
     #convert key and inp to binary for XOR
     for n in (0, len(inp)):
-        #ord returns an integer representing the Unicode code point of the character
-        x = ord(inp[n])
-        y = ord(key[n])
-        #chr returns the Unicode object corresponding to the letter
-        #the ^ operator uses moduli two addition, essentially decrypting the message by using the key
-        value = chr(x^y)
+        x = format(inp[n], 'b')
+        y = format(key[n], 'b')
+        bin = x ^ y
+        hex = 
+        output = output + hex + "\t"
+        
     debug = True
 
     
