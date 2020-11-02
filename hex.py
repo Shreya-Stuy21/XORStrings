@@ -10,17 +10,17 @@ if(debug):
     print("mode:"+mode)
     print("key: "+key)
     print("inp: "+inp)
+
+output = ""
+#loop the key string when the keyfile is shorter than the textfiles
+diff = len(inp) - len(key)
+while (diff > 0):
+    key = key + key
+    diff = len(inp) - len(key)
+key = key[0, len(inp)]
     
 #Part 1: Human Readable Mode
 if(mode = "human"):
-    output = ""
-    #loop the key string when the keyfile is shorter than the textfiles
-    diff = len(inp) - len(key)
-    while (diff > 0):
-        key = key + key
-        diff = len(inp) - len(key)
-    key = key[0, len(inp)]
-        
     #convert key and inp to Unicode numbers for XOR
     for n in (0, len(inp)):
         #ord returns an integer representing the Unicode code point of the character
@@ -32,24 +32,19 @@ if(mode = "human"):
     debug = True
     
 #Part 2: Hexidecimal Mode
-if(mode = "numOut"):
-        output = ""
-    #loop the key string when the keyfile is shorter than the textfiles
-    diff = len(inp) - len(key)
-    while (diff > 0):
-        key = key + key
-        diff = len(inp) - len(key)
-    key = key[0, len(inp)]
-        
+if(mode = "numOut"):        
     #convert key and inp to binary for XOR
     for n in (0, len(inp)):
         x = format(inp[n], 'b')
         y = format(key[n], 'b')
-        bin = x ^ y
-        hex = 
-        output = output + hex + "\t"
+        binary = x ^ y
+        #convert binary to hexadecimal
+        hexadecimal = hex(int(binary, 2)).strip('0x')
+        #adds the hexadecimal value to the output with a tab for space
+        output = output + hexadecimal + "\t"
         
     debug = True
+print(output)
 
     
     
