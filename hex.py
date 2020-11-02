@@ -20,7 +20,7 @@ while (diff > 0):
 key = key[0, len(inp)]
     
 #Part 1: Human Readable Mode
-if(mode = "human"):
+if(mode == "human"):
     #convert key and inp to Unicode numbers for XOR
     for n in (0, len(inp)):
         #ord returns an integer representing the Unicode code point of the character
@@ -32,7 +32,7 @@ if(mode = "human"):
     debug = True
     
 #Part 2: Hexidecimal Mode
-if(mode = "numOut"):        
+if(mode == "numOut"):        
     #convert key and inp to binary for XOR
     for n in (0, len(inp)):
         x = format(inp[n], 'b')
