@@ -17,12 +17,12 @@ diff = len(inp) - len(key)
 while (diff > 0):
     key = key + key
     diff = len(inp) - len(key)
-key = key[0, len(inp)]
+key = key[0: len(inp)]
     
 #Part 1: Human Readable Mode
 if(mode == "human"):
     #convert key and inp to Unicode numbers for XOR
-    for n in (0, len(inp)):
+    for n in range(0, len(inp)):
         #ord returns an integer representing the Unicode code point of the character
         x = ord(inp[n])
         y = ord(key[n])
@@ -34,7 +34,7 @@ if(mode == "human"):
 #Part 2: Hexidecimal Mode
 if(mode == "numOut"):        
     #convert key and inp to binary for XOR
-    for n in (0, len(inp)):
+    for n in range(0, len(inp)):
         x = format(inp[n], 'b')
         y = format(key[n], 'b')
         binary = x ^ y
