@@ -13,5 +13,20 @@ if(debug):
     
 #Part 1: Human Readable Mode
 if(mode = "human"):
+    output = ""
     #loop the key string when the keyfile is shorter than the textfiles
+    diff = len(inp) - len(key)
+    while (diff > 0):
+        key = key + key
+        diff = len(inp) - len(key)
+    key = key[0, len(inp)]
+        
+    #convert key and inp to binary for XOR
+    for n in (0, len(inp)):
+        p = format(inp[n], 'b')
+        q = format(inp[n], 'b')
+        r = 
+        
+            
+    
     
