@@ -35,8 +35,8 @@ if(mode == "human"):
 if(mode == "numOut"):        
     #convert key and inp to binary for XOR
     for n in range(0, len(inp)):
-        x = format(inp[n], 'b')
-        y = format(key[n], 'b')
+        x = format(ord(inp[n]), 'b')
+        y = format(ord(key[n]), 'b')
         binary = x ^ y
         #convert binary to hexadecimal
         hexadecimal = hex(int(binary, 2)).strip('0x')
