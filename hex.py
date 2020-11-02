@@ -32,16 +32,15 @@ if(mode == "human"):
     debug = True
     
 #Part 2: Hexidecimal Mode
-if(mode == "numOut"):        
-    #convert key and inp to binary for XOR
+if(mode == "numOut"):
     for n in range(0, len(inp)):
-        x = format(ord(inp[n]), 'b')
-        y = format(ord(key[n]), 'b')
-        binary = x ^ y
-        #convert binary to hexadecimal
-        hexadecimal = hex(int(binary, 2)).strip('0x')
+        a = ord(inp[n])
+        b = ord(key[n])
+        bitwise_xor = a^b
+        hexadecimal = hex(bitwise_xor)
+        hexadecimal = hexadecimal[2:len(hexadecimal)]
         #adds the hexadecimal value to the output with a tab for space
-        output = output + hexadecimal + "\t"
+        output = output + hexadecimal + "   "
         
     debug = True
 print(output)
